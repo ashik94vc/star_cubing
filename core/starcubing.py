@@ -1,11 +1,16 @@
-from tree import Treepip 
+from tree import Tree
+from memory_profiler import profile
+
+# @profile
 def starCubing(tree,cur_node,min_sup):
     tree_c = None
     if cur_node.value >= min_sup:
         if not cur_node.is_root():
-            print(cur_node.value)
+            # print(cur_node.value)
+            pass
         if cur_node.is_leaf():
-            print(cur_node.value)
+            # print(cur_node.value)
+            pass
         else:
             tree_c = Tree(cur_node.value, cur_node.name+'_tree')
             tree.add_node(tree_c)

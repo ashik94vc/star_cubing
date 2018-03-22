@@ -9,6 +9,14 @@ class Tree(object):
             for child in children:
                 self.add_node(child)
 
+    def depth(self):
+        stree = self
+        depth = 0
+        while len(stree.children) > 0:
+            stree = stree.first_child()
+            depth += 1
+        return depth
+
     def first_child(self):
         assert len(self.children) > 0
         return self.children[0]
