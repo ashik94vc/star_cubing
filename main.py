@@ -3,12 +3,13 @@ from starcubing import starCubing
 from generate_tree import StarReduction
 import time
 from pptree import *
+import sys
 
 start_time = time.time()
 
-count_table, input_table = parseInput('../dataset/kddcup.csv')
+count_table, input_table = parseInput(sys.argv[0])
 
-starReduce = StarReduction(5000, input_table, count_table)
+starReduce = StarReduction(sys.argv[1], input_table, count_table)
 
 starReduce.createStarTable()
 tree = starReduce.createStarTree()
@@ -17,7 +18,7 @@ tree = starReduce.createStarTree()
 # print_tree(tree)
 # print(starReduce.compressed_table)
 
-tree1 = starCubing(tree,tree,5000)
+tree1 = starCubing(tree,tree,sys.argv[1])
 
 # print(tree.value)
 
